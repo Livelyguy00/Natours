@@ -1,24 +1,14 @@
-$primary: #55c57a;
-$primary-light: #7ed56f;
-$primary-dark: #28b485;
-$dark-grey: #777;
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-*,*::after,*::before{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
 
-html{
-  font-size: 10px;
-}
+@import "components/button";
 
-body{
-  color: $dark-grey;
-}
+@import "layout/header";
 
-.header{
-  background-image: linear-gradient(
-    rgba($primary-light, 0.8),
-    rgba($primary-dark, 0.8));
-}
+@import "pages/home";
