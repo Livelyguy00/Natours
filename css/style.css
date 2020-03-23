@@ -150,8 +150,94 @@ body {
       outline: 1.5rem solid #55c57a;
       z-index: 1;
       padding: -2rem; }
-    .composition__photo:hover + .composition__photo__photo:not(:hover) {
+    .composition__photo:hover + .composition__photo:not(:hover) {
       transform: scale(0.9); }
+
+.feature-box {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.tour-box {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  position: relative; }
+  .tour-box__side {
+    transition: all .8s ease;
+    font-size: 2rem;
+    height: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .tour-box__side--front {
+      background-color: #fff; }
+    .tour-box__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+      .tour-box__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .tour-box__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .tour-box__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .tour-box:hover .tour-box__side--front {
+    transform: rotateY(-180deg); }
+  .tour-box:hover .tour-box__side--back {
+    transform: rotate(0); }
+  .tour-box__header {
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .tour-box__header--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .tour-box__header--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .tour-box__header--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .tour-box__title {
+    position: absolute;
+    z-index: 1;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+    font-size: 2.8rem;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+    .tour-box__title--span {
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone; }
+      .tour-box__title--span-1 {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+      .tour-box__title--span-2 {
+        background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+      .tour-box__title--span-3 {
+        background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
 
 .header {
   height: 95vh;
@@ -159,7 +245,8 @@ body {
   background-position: top;
   background-size: cover;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__top {
     display: flex;
     flex-direction: row;
@@ -204,3 +291,19 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  background-color: #f7f7f7;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-top: -10vh;
+  padding: 20rem 0;
+  transform: skewY(-6deg); }
+  .section-features > * {
+    transform: skewY(6deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 20rem 0;
+  margin-top: -8vh; }
