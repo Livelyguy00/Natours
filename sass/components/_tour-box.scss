@@ -2,13 +2,13 @@
     //FUNCTIONALITY
     perspective: 150rem;
     -moz-perspective: 150rem;
-    height: 50rem;
+    height: 52rem;
     position: relative;
 
     &__side{
         transition: all .8s ease;
         font-size: 2rem;
-        height: 50rem;
+        height: 52rem;
         position: absolute;
         top: 0;
         left: 0;
@@ -100,5 +100,49 @@
                 background-image: linear-gradient(to right bottom, rgba($tertiary-light, .85), rgba($tertiary-dark, .85));
             }
         }
+    }
+
+    &__details{
+        padding: 3rem;
+
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li{
+                text-align: center;
+                font-size: $default-font-size;
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid $lighter-grey;
+                }
+            }
+        }
+    }
+
+    //BACK SIDE STYLING
+    &__cta{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__price-box{
+        color: $white;
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100;
     }
 }

@@ -87,6 +87,18 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
+.u-margin-top-small {
+  margin-top: 2rem; }
+
+.u-margin-top-medium {
+  margin-top: 4rem; }
+
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-top-huge {
+  margin-top: 10rem; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -108,6 +120,10 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+
+.btn--green {
+  background-color: #55c57a;
+  color: #fff; }
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
@@ -166,6 +182,7 @@ body {
     margin-bottom: .5rem;
     display: inline-block;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent; }
   .feature-box:hover {
@@ -174,12 +191,12 @@ body {
 .tour-box {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  height: 50rem;
+  height: 52rem;
   position: relative; }
   .tour-box__side {
     transition: all .8s ease;
     font-size: 2rem;
-    height: 50rem;
+    height: 52rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -238,6 +255,96 @@ body {
         background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
       .tour-box__title--span-3 {
         background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .tour-box__details {
+    padding: 3rem; }
+    .tour-box__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .tour-box__details ul li {
+        text-align: center;
+        font-size: 1.6rem;
+        padding: 1rem; }
+        .tour-box__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .tour-box__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .tour-box__price-box {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 8rem; }
+  .tour-box__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .tour-box__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    backface-visibility: hidden; }
+  .story__photo {
+    height: 100%;
+    width: auto;
+    transition: all .5s;
+    transform: translateX(-3.5rem) scale(1.4);
+    backface-visibility: hidden; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 10%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; }
+  .story:hover .story__photo {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(2px) brightness(0.8);
+    -webkit-filter: blur(2px) brightness(0.8); }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .header {
   height: 95vh;
@@ -258,7 +365,7 @@ body {
     position: absolute;
     left: 50%;
     top: 40%;
-    transform: translate(-50%);
+    transform: translate(-50%, -40%);
     text-align: center; }
 
 .row {
@@ -299,11 +406,23 @@ body {
   background-position: center;
   margin-top: -10vh;
   padding: 20rem 0;
-  transform: skewY(-6deg); }
+  transform: skewY(-5deg); }
   .section-features > * {
-    transform: skewY(6deg); }
+    transform: skewY(5deg); }
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 20rem 0;
+  padding: 15rem 0;
   margin-top: -8vh; }
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  .section-booking__booking {
+    background-image: url(../img/nat-10.jpg);
+    background-size: 100%;
+    height: 50rem; }
