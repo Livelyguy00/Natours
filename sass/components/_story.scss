@@ -9,6 +9,17 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tab-port){
+        padding: 4rem;
+        padding-left: 7rem;
+        width: auto;
+    }
+
+    @include respond(phone) {
+        transform: unset;
+        padding: 3rem;
+    }
+
     &__shape{
         width: 15rem;
         height: 15rem;
@@ -20,6 +31,14 @@
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
         backface-visibility: hidden;
+
+        @include respond(phone) {
+            transform: unset;
+            width: 10rem;
+            height: 10rem;
+            float: unset;
+            margin: 0 auto 1rem auto;
+        }
     }
 
     &__photo{
@@ -28,10 +47,19 @@
         transition: all .5s;
         transform: translateX(-3.5rem) scale(1.4);
         backface-visibility: hidden;
+
+        @include respond(phone) {
+            transform: translate(-2.5rem);
+        }
     }
 
     &__text{
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: unset;
+            text-align: center;
+        }
     }
 
     &__caption{

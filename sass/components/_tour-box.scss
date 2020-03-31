@@ -1,11 +1,11 @@
-.tour-box{
+.tour-box {
     //FUNCTIONALITY
     perspective: 150rem;
     -moz-perspective: 150rem;
     height: 52rem;
     position: relative;
 
-    &__side{
+    &__side {
         transition: all .8s ease;
         font-size: 2rem;
         height: 52rem;
@@ -18,38 +18,38 @@
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($black, .15);
 
-        &--front{
+        &--front {
             background-color: $white;
         }
 
-        &--back{
+        &--back {
             background-color: green;
             transform: rotateY(180deg);
 
-            &-1{
+            &-1 {
                 background-image: linear-gradient(to right bottom, $secondary-light, $secondary-dark);
             }
 
-            &-2{
+            &-2 {
                 background-image: linear-gradient(to right bottom, $primary-light, $primary-dark);
             }
 
-            &-3{
+            &-3 {
                 background-image: linear-gradient(to right bottom, $tertiary-light, $tertiary-dark);
             }
         }
     }
 
-    &:hover &__side--front{
+    &:hover &__side--front {
         transform: rotateY(-180deg);
     }
 
-    &:hover &__side--back{
+    &:hover &__side--back {
         transform: rotate(0);
     }
-    
+
     //FRONT-SIDE STYLING
-    &__header{
+    &__header {
         position: relative;
         z-index: 0;
         background-size: cover;
@@ -58,20 +58,20 @@
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
-        &--1{
+        &--1 {
             background-image: linear-gradient(to right bottom, $secondary-light, $secondary-dark), url(../img/nat-5.jpg);
         }
 
-        &--2{
+        &--2 {
             background-image: linear-gradient(to right bottom, $primary-light, $primary-dark), url(../img/nat-6.jpg);
         }
 
-        &--3{
+        &--3 {
             background-image: linear-gradient(to right bottom, $tertiary-light, $tertiary-dark), url(../img/nat-7.jpg);
         }
     }
 
-    &__title{
+    &__title {
         position: absolute;
         z-index: 1;
         text-transform: uppercase;
@@ -83,38 +83,43 @@
         right: 2rem;
         width: 75%;
 
-        &--span{
+        &--span {
             padding: 1rem 1.5rem;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
 
-            &-1{
+            &-1 {
                 background-image: linear-gradient(to right bottom, rgba($secondary-light, .85), rgba($secondary-dark, .85));
             }
-    
-            &-2{
+
+            &-2 {
                 background-image: linear-gradient(to right bottom, rgba($primary-light, .85), rgba($primary-dark, .85));
             }
-    
-            &-3{
+
+            &-3 {
                 background-image: linear-gradient(to right bottom, rgba($tertiary-light, .85), rgba($tertiary-dark, .85));
             }
         }
     }
 
-    &__details{
+    &__details {
         padding: 3rem;
 
-        ul{
+        @include respond(tab-land){
+            padding: 0;
+        }
+
+        ul {
             list-style: none;
             width: 80%;
             margin: 0 auto;
 
-            li{
+            li {
                 text-align: center;
                 font-size: $default-font-size;
                 padding: 1rem;
-                &:not(:last-child){
+
+                &:not(:last-child) {
                     border-bottom: 1px solid $lighter-grey;
                 }
             }
@@ -122,7 +127,7 @@
     }
 
     //BACK SIDE STYLING
-    &__cta{
+    &__cta {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -130,19 +135,69 @@
         height: 100%;
     }
 
-    &__price-box{
+    &__price-box {
         color: $white;
         text-align: center;
         margin-bottom: 8rem;
     }
 
-    &__price-only{
+    &__price-only {
         font-size: 1.4rem;
         text-transform: uppercase;
     }
 
-    &__price-value{
+    &__price-value {
         font-size: 6rem;
         font-weight: 100;
+    }
+
+    @include respond(tab-port) {
+        height: auto;
+        border-radius: 3px;
+        background-color: $white;
+        box-shadow: 0 1.5rem 4rem rgba($black, .2);
+
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &__details {
+            padding: 0;
+        }
+
+        &__price-only {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        //BACK SIDE STYLING
+        &__cta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+        }
     }
 }

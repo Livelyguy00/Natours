@@ -10,7 +10,18 @@
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  
+  z-index: 5;
+
+  @include respond(tab-port){
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  @include respond(phone){
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
   &__top{
     display: flex;
     flex-direction: row;
